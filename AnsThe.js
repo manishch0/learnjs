@@ -37,7 +37,7 @@ if (num < 12) {
 // Q6 and solution
 
 let nums1 = 67;
-if ((num = 67)) {
+if ((num = nums)) {
   console.log("number 67 is equal");
 } else console.log("number not equal to 67");
 
@@ -73,16 +73,16 @@ for (let i = 0; i <= 100; i++) {
 
 // Q10 and ans
 
-for (let i = 100; i >= 0; i--) {
+for (let i = 100; i >= 1; i--) {
   console.log(i);
 }
 
 // Q11
 
 let set1 = 54;
-let set2 = 46;
+let set2 = 40;
 let ctotal = set1 + set2;
-if ((ctotal = 100)) {
+if (ctotal < 100) {
   console.log(true);
 } else console.log(false);
 

@@ -128,21 +128,22 @@ checkGreaterThanThird(80, 20, 90);
 
 // E.g.  calculator(20, 30, “multiplication”)
 // Output: Multiplication of 20 and 30 is 600.
-
+console.log("Operation solution");
 function calculator(a, b, Operation) {
-  //   console.log(Operation + `of` + a + ` and ` + b + `is `);
-  sum = a + b;
-  console.log(sum);
-  sub = a - b;
-  console.log(sub);
-  mult = a * b;
-  console.log(mult);
-
-  div = a / b;
-
-  console.log(div);
+  if (Operation === "add") {
+    console.log(a + b);
+  } else if (Operation === "sub") {
+    return a - b;
+  } else if (Operation === "mul") {
+    return a * b;
+  } else if (Operation === "div") {
+    return a / b;
+  }
 }
-calculator(10, 20, `${sum}`);
+calculator(10, 20, "add");
+console.log(calculator(100, 20, "sub"));
+console.log(calculator(101, 20, "mul"));
+console.log(calculator(110, 20, "div"));
 
 //need help in this question
 
@@ -175,19 +176,23 @@ printUpto(2);
 // Q13 Create a function printDirection that takes 1 argument
 // and its  value is  either “forward” or “backward”.
 // Depending Upon the second value. Output will change.
-
 function printDirection(direction) {
-  if (direction === 1) {
+  if (direction === "forward") {
     for (let i = 0; i <= 100; i++) {
       console.log(i);
     }
-  } else if (direction === 2) {
+  } else if (direction === "backward") {
     for (let i = 100; i >= 1; i--) {
       console.log(i);
     }
   }
 }
-printDirection(2);
+console.log("forward data check");
+
+printDirection("forward");
+
+console.log("forward data check down");
+printDirection("backward");
 
 // Q14 Create a function calculateGST that takes 1 argument
 // e.g. totalAmount.
@@ -242,17 +247,19 @@ console.log(calculateGST(1000));
 // Output: GST for Electronics is 12%. Total amount after GST is 1120.
 
 function GSTType(totalAmount, typeOfService) {
-  if (typeOfService === 1 && healthCare == 1) {
+  if (typeOfService === "dine" || typeOfService == "healthcare") {
     gstCal = (totalAmount / 100) * 5;
     return totalAmount + gstCal;
   }
-  if (typeOfService === 2) {
+  if (typeOfService === "Goods" || typeOfService === "Entertainment") {
     gstCal = (totalAmount / 100) * 12;
     return totalAmount + gstCal;
   }
-  if (typeOfService === 3) {
+  if (typeOfService === "Electronics" || typeOfService === "Vehicles") {
     gstCal = (totalAmount / 100) * 28;
     return totalAmount + gstCal;
   }
 }
-console.log(GSTType(1000, 2));
+console.log(GSTType(1000, "dine"), "hello check data");
+console.log(GSTType(100, "Electronics"), "hello check data");
+console.log(GSTType(1200, "Goods"), "hello check data");

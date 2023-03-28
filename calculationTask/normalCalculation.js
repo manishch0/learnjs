@@ -107,3 +107,28 @@ function TableMul() {
   table += "</table>";
   document.getElementById("resultTable").innerHTML = table;
 }
+
+// function calculator() {
+let num1 = document.getElementById("FindCal1");
+let num2 = document.getElementById("FindCal2");
+let resultCheck = document.getElementById("resultFind");
+
+function CalAdd() {
+  let sum = +num1.value + +num2.value;
+  resultCheck.innerHTML = sum;
+}
+
+function CalSub() {
+  let sub = num1.value - +num2.value;
+  resultCheck.innerHTML = sub;
+}
+
+function CalMul() {
+  let mul = num1.value * +num2.value;
+  resultCheck.innerHTML = mul;
+}
+function CalDiv() {
+  let div = num1.value / +num2.value;
+  resultCheck.innerHTML = div;
+}
+// }

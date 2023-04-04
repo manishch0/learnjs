@@ -72,3 +72,5 @@ for (let i = 0; i <= arr.length; i++) {
     console.log("divisible by 2 and 3 both", arr[3]);
   } else console.log(arr[3], "is not divisible by 2 and 3");
 }
+
+

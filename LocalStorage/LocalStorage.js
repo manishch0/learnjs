@@ -2,28 +2,47 @@ const Form = document.querySelector("#PersonForm");
 const btnSumbit = document.querySelector("#btnSumbit");
 const btnViewDetails = document.querySelector("#btnViewDetails");
 
-Form.addEventListener("click", (e) => {
-  e.preventDefault();
-});
+let User = [];
+
+if (localStorage.getItem("UserData")) {
+  let data = JSON.parse(localStorage.getItem("UserData")) || [];
+  console.log(data);
+
+  for (let i = 0; i <= UserData.length; i++) {
+    let res = `
+    <div>
+    <h1>${UserData[i].FirstName}</h1>
+    <h1>${UserData[i].Lastname}</h1>
+
+    </div>`;
+    $("#result").append(res);
+  }
+}
 
 btnSumbit.addEventListener("click", (e) => {
-  const firstName = document.querySelector("#firstName");
-  const Lastname = document.getElementById("lastName");
-  const Email = document.getElementById("email");
-  const PinCode = document.getElementById("pinCode");
-  const ContactNO = document.getElementById("contactNo");
-  const Address = document.getElementById("address");
+  e.preventDefault();
+  const FirstName = document.querySelector("#firstName").value;
+  const Lastname = document.getElementById("lastName").value;
+  const Email = document.getElementById("email").value;
+  const PinCode = document.getElementById("pinCode").value;
+  const ContactNO = document.getElementById("contactNo").value;
+  const Address = document.getElementById("address").value;
 
-  localStorage.setItem("firstName", firstName.value);
-  localStorage.setItem("lastName", Lastname.value);
-  localStorage.setItem("email", Email.value);
-  localStorage.setItem("pinCode", PinCode.value);
-  localStorage.setItem("contactNo", ContactNO.value);
-  localStorage.setItem("address", Address.value);
+  let UserData = {
+    FirstName: FirstName,
+    Lastname: Lastname,
+    Email: Email,
+    PinCode: PinCode,
+    ContactNO: ContactNO,
+    Address: Address,
+  };
+  User.push(UserData);
+  localStorage.setItem("User", JSON.stringify(User));
+  console.log(User);
 });
 
-firstName.addEventListener("change", updateValue);
-function updateValue(e) {
-  result.textContent = e.target.value;
-}
-btnViewDetails.addEventListener("click", (e) => {});
+// firstName.addEventListener("change", updateValue);
+// function updateValue(e) {
+//   result.textContent = e.target.value;
+// }
+// btnViewDetails.addEventListener("click", (e) => {});

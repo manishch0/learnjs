@@ -46,3 +46,10 @@ btnSumbit.addEventListener("click", (e) => {
 //   result.textContent = e.target.value;
 // }
 // btnViewDetails.addEventListener("click", (e) => {});
+
+// const str = "Hello world";
+// const letter = [...str];
+// console.log(letter);
+// const arr = ["rohit", "rajat", "Manish", "rohit"];
+// const data = new Set(letter, "", "d");
+// console.log(data);
